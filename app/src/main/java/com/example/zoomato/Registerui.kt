@@ -19,5 +19,10 @@ class Registerui : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        binding.createacc.setOnClickListener{
+            val intent=Intent(this@Registerui,Location_Ui::class.java)
+            startActivity(intent)
+        }
+
     }
 }
