@@ -3,26 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/home_Fragment">
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.zoomato.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first" >
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
+        android:id="@+id/home_Fragment"
+        android:name="com.example.zoomato.Fragment.Home_Fragment"
+        android:label="fragment_home_"
+        tools:layout="@layout/fragment_home_" />
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.zoomato.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second" >
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+        android:id="@+id/cart_Fragment"
+        android:name="com.example.zoomato.Fragment.Cart_Fragment"
+        android:label="fragment_cart_"
+        tools:layout="@layout/fragment_cart_" />
+    <fragment
+        android:id="@+id/history_Fragment"
+        android:name="com.example.zoomato.Fragment.History_Fragment"
+        android:label="fragment_history_"
+        tools:layout="@layout/fragment_history_" />
+    <fragment
+        android:id="@+id/search_Fragment"
+        android:name="com.example.zoomato.Fragment.Search_Fragment"
+        android:label="fragment_search_"
+        tools:layout="@layout/fragment_search_" />
+    <fragment
+        android:id="@+id/profile_Fragment"
+        android:name="com.example.zoomato.Fragment.Profile_Fragment"
+        android:label="fragment_profile_"
+        tools:layout="@layout/fragment_profile_" />
 </navigation>

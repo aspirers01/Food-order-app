@@ -1,5 +1,6 @@
 package com.example.zoomato
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -20,6 +21,12 @@ class Location_Ui : AppCompatActivity() {
 
         val autoCompleteTextView=binding.listLocation
         autoCompleteTextView.setAdapter(adapter)
+//user data page pyp
 
+        binding.btn.setOnClickListener {
+              val intent= Intent(this@Location_Ui,Home_Page::class.java)
+            startActivity(intent)
+
+        }
     }
 }

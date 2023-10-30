@@ -5,22 +5,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="home"
-        android:icon=""
+        android:id="@+id/home_Fragment"
+        android:icon="@drawable/baseline_home_24"
         />
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="cart" />
+        android:title="cart"
+        android:id="@+id/cart_Fragment"
+        android:icon="@drawable/baseline_shopping_cart_24"/>
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="search" />
+        android:title="search"
+        android:id="@+id/search_Fragment"
+        android:icon="@drawable/baseline_search_24"/>
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="history" />
+        android:title="history"
+        android:id="@+id/history_Fragment"
+        android:icon="@drawable/baseline_history_24"/>
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="profile" />
+        android:title="profile"
+        android:id="@+id/profile_Fragment"
+        android:icon="@drawable/baseline_person_24"
+        />
 </menu>
