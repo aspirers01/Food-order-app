@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView.ScaleType
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.zoomato.Adaptar.PopularAdapter
 import com.example.zoomato.R
 import com.example.zoomato.databinding.FragmentHomeBinding
 
@@ -50,5 +52,15 @@ class Home_Fragment : Fragment() {
                   Toast.makeText(requireContext(), itemmessage, Toast.LENGTH_SHORT).show()
               }
           })
+
+
+        val food_name= listOf("Burger","Sandwich","chaat","tiikki","momo");
+        val price= listOf("15","34","34","45","20")
+        val imgof_food = listOf(R.drawable.d1,R.drawable.d1,R.drawable.d2,R.drawable.d1,R.drawable.d2)
+
+        val adapter=PopularAdapter(food_name,imgof_food,price)
+            binding.rcHome.layoutManager=LinearLayoutManager(requireContext())
+            binding.rcHome.adapter=adapter
+
     }
 }
