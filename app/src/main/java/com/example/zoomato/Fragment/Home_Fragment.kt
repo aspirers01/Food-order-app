@@ -63,5 +63,11 @@ class Home_Fragment : Fragment() {
         binding.rcHome.layoutManager = LinearLayoutManager(requireContext())
         binding.rcHome.adapter = adapter
 
+
+        binding.viewmenubtn.setOnClickListener{
+          val bottomsheet=Menu_BottomSheet_Fragment()
+            bottomsheet.show(parentFragmentManager,"test")
+        }
+
     }
 }
