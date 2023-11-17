@@ -16,7 +16,7 @@ class MenuAdapter(
         fun bind(position: Int) {
             binding.apply {
                 menuImg.setImageResource(menuimgs[position])
-                menuPrice.text = menuprices[position]
+                menuPrice.text = "$ "+ menuprices[position]
                 menufoodname.text = menuitems[position]
             }
 
