@@ -1,12 +1,12 @@
-package com.example.zoomato
+package com.example.zoomato.Fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zoomato.Adaptar.Notification_adapter
+import com.example.zoomato.R
 import com.example.zoomato.databinding.FragmentNotifcationBottomBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

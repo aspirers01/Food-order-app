@@ -1,5 +1,6 @@
 package com.example.zoomato.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zoomato.Adaptar.CartAdapter
+import com.example.zoomato.PayoutActivity
 import com.example.zoomato.R
 import com.example.zoomato.databinding.FragmentCartBinding
 
@@ -40,10 +42,23 @@ class Cart_Fragment : Fragment() {
             ArrayList(cartimage),
             requireActivity()
         )
+
         binding.cartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.cartRecyclerView.adapter = adapter
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.proceedbtn.setOnClickListener {
+         val intent=Intent(requireContext(),PayoutActivity::class.java)
+            startActivity(intent)
+
+        }
+
+    }
+
 
 }
+
+
