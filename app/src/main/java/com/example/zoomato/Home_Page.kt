@@ -1,12 +1,10 @@
 package com.example.zoomato
 
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.zoomato.Fragment.Notifcation_BottomFragment
 import com.example.zoomato.databinding.ActivityHomePageBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -24,7 +22,7 @@ class Home_Page : AppCompatActivity() {
 
         //setup to notification button
           binding.notification.setOnClickListener{
-              val bottomfragment=Notifcation_BottomFragment()
+              val bottomfragment= Notifcation_BottomFragment()
                 bottomfragment.show(supportFragmentManager,"test string")
           }
 
