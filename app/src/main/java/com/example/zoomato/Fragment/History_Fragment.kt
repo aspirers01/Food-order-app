@@ -35,7 +35,7 @@ class History_Fragment : Fragment() {
         val byfoodname = arrayListOf<String>("bruger", "momo", "pizza")
         val byfoodprice = arrayListOf<String>("45", "50", "100")
         val buyimg = arrayListOf<Int>(R.drawable.d1, R.drawable.d2, R.drawable.d1)
-        BuyAgainAdapter = BuyAgainAdapter(byfoodname, byfoodprice, buyimg)
+        BuyAgainAdapter = BuyAgainAdapter(byfoodname, byfoodprice, buyimg,requireContext())
         binding.rcbuyagain.layoutManager = LinearLayoutManager(requireContext())
         binding.rcbuyagain.adapter = BuyAgainAdapter
     }
