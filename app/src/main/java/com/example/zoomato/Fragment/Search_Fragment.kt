@@ -12,12 +12,12 @@ import com.example.zoomato.R
 import com.example.zoomato.databinding.FragmentSearchBinding
 
 
- class Search_Fragment : Fragment() {
+class Search_Fragment : Fragment() {
     private lateinit var adapter: MenuAdapter
     private lateinit var binding: FragmentSearchBinding
-   private val food_name = listOf("Burger", "Sandwich", "chaat", "tiikki", "momo");
-   private val price = listOf("15", "34", "34", "45", "20")
-   private val imgof_food =
+    private val food_name = listOf("Burger", "Sandwich", "chaat", "tiikki", "momo");
+    private val price = listOf("15", "34", "34", "45", "20")
+    private val imgof_food =
         listOf(R.drawable.d1, R.drawable.d1, R.drawable.d2, R.drawable.d1, R.drawable.d2)
 
 
@@ -38,7 +38,7 @@ import com.example.zoomato.databinding.FragmentSearchBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = MenuAdapter(
-            filtermenufood_name, filterPrice, filterimg
+            filtermenufood_name, filterPrice, filterimg, requireContext()
         )
         binding.recycleSearch.layoutManager = LinearLayoutManager(requireContext());
         binding.recycleSearch.adapter = adapter
@@ -56,12 +56,11 @@ import com.example.zoomato.databinding.FragmentSearchBinding
         filterimg.clear()
 
 
-            filterPrice.addAll(price)
-            filterimg.addAll(imgof_food)
-            filtermenufood_name.addAll(food_name)
+        filterPrice.addAll(price)
+        filterimg.addAll(imgof_food)
+        filtermenufood_name.addAll(food_name)
         adapter.notifyDataSetChanged()
-        }
-
+    }
 
 
     // setup for search view;
