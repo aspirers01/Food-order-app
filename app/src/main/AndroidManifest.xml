@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Zoomato"
         tools:targetApi="31">
         <activity
+            android:name=".addFooditem"
+            android:exported="false" />
+        <activity
             android:name=".DetailsActivity"
             android:exported="false" />
         <activity

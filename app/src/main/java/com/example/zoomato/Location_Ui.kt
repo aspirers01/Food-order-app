@@ -22,7 +22,11 @@ class Location_Ui : AppCompatActivity() {
         val autoCompleteTextView=binding.listLocation
         autoCompleteTextView.setAdapter(adapter)
 //user data page pyp
+  binding.addbtm.setOnClickListener {
+        val intent= Intent(this@Location_Ui,addFooditem::class.java)
+        startActivity(intent)
 
+  }
         binding.btn.setOnClickListener {
               val intent= Intent(this@Location_Ui,Home_Page::class.java)
             startActivity(intent)

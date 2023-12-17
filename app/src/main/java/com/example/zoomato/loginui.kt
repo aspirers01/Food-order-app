@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.zoomato.Model.MenuModel
 import com.example.zoomato.databinding.ActivityLoginuiBinding
 import com.example.zoomato.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
