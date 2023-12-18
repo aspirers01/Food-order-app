@@ -44,17 +44,14 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/description_text"
+                    android:id="@+id/ingredent_edt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:fontFamily="@font/latoregular"
                     android:inputType="textMultiLine"
                     android:padding="8dp"
-                    android:text="Lorem ipsum is placeholder text
-        commonly used in the graphic,
-        print, and publishing industries
-        for previewing layouts and visual " />
+                   android:hint="enter the ingredent of food item to be added"/>
 
             </LinearLayout>
 
@@ -85,6 +82,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/food_price_edt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -122,6 +120,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/food_name_edt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -159,17 +158,14 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/ingredent_text"
+                    android:id="@+id/discription_edt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:fontFamily="@font/latoregular"
                     android:inputType="textMultiLine"
                     android:padding="8dp"
-                    android:text="Lorem ipsum is placeholder text
-        commonly used in the graphic,
-        print, and publishing industries
-        for previewing layouts and visual " />
+                    android:hint="enter the description of food item " />
 
             </LinearLayout>
 
@@ -215,7 +211,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/photo_btn">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/selectedimg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:srcCompat="@tools:sample/avatars" />
