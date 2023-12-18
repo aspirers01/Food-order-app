@@ -9,145 +9,232 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-16dp">
+        tools:layout_editor_absoluteX="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="600dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_ingredient"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/profile_edittext_shape"
+                android:elevation="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/linear_layout_email"
+                tools:layout_editor_absoluteX="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/yeonsungregular"
+                    android:text="ingredent"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/description_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/latoregular"
+                    android:inputType="textMultiLine"
+                    android:padding="8dp"
+                    android:text="Lorem ipsum is placeholder text
+        commonly used in the graphic,
+        print, and publishing industries
+        for previewing layouts and visual " />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_email"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/profile_edittext_shape"
+                android:elevation="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/linear_layout_name"
+                tools:layout_editor_absoluteX="0dp">
+
+                <TextView
+                    android:id="@+id/food_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/yeonsungregular"
+                    android:text="Food price"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/latoregular"
+                    android:hint="enter food price"
+                    android:inputType="text"
+                    android:padding="4dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_name"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/profile_edittext_shape"
+                android:elevation="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView29"
+                tools:layout_editor_absoluteX="0dp">
+
+                <TextView
+                    android:id="@+id/food_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/yeonsungregular"
+                    android:text="Food Name"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/latoregular"
+                    android:hint="enter food name "
+                    android:inputType="text"
+                    android:padding="4dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/profile_edittext_shape"
+                android:elevation="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout_ingredient"
+                tools:layout_editor_absoluteX="0dp">
+
+                <TextView
+                    android:id="@+id/ingredient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/yeonsungregular"
+                    android:text="description"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/ingredent_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/latoregular"
+                    android:inputType="textMultiLine"
+                    android:padding="8dp"
+                    android:text="Lorem ipsum is placeholder text
+        commonly used in the graphic,
+        print, and publishing industries
+        for previewing layouts and visual " />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView29"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="32dp"
-                android:gravity="center"
-                android:text="add items "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/yeonsungregular"
+                android:text="Add Food Items"
                 android:textColor="@color/mainred"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.471"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:ems="10"
-                android:hint="enter food name"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="@+id/textView31"
-                app:layout_constraintStart_toEndOf="@+id/textView31"
-                app:layout_constraintTop_toTopOf="@+id/textView31"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <TextView
-                android:id="@+id/textView31"
-                android:layout_width="77dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="56dp"
-                android:gravity="center"
-                android:text="food name"
-                app:layout_constraintStart_toStartOf="@+id/textView29"
-                app:layout_constraintTop_toBottomOf="@+id/textView29" />
-
-            <TextView
-                android:id="@+id/textView32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:text="description"
-                app:layout_constraintStart_toStartOf="@+id/textView31"
-                app:layout_constraintTop_toBottomOf="@+id/textView31" />
-
-            <TextView
-                android:id="@+id/textView33"
-                android:layout_width="42dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="48dp"
-                android:text="ing"
-                app:layout_constraintStart_toStartOf="@+id/textView32"
-                app:layout_constraintTop_toBottomOf="@+id/textView32" />
-
-            <TextView
-                android:id="@+id/textView34"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="76dp"
-                android:text="upload img"
-                app:layout_constraintEnd_toEndOf="@+id/editTextText3"
-                app:layout_constraintStart_toStartOf="@+id/textView33"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
-
-            <EditText
-                android:id="@+id/editTextText2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:ems="10"
-                android:hint="enter food discription"
-
-
-                android:inputType="textMultiLine"
-                app:layout_constraintBottom_toBottomOf="@+id/textView32"
-                app:layout_constraintStart_toEndOf="@+id/textView32"
-                app:layout_constraintTop_toTopOf="@+id/textView32" />
-
-            <EditText
-                android:id="@+id/editTextText3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:ems="10"
-                android:inputType="textMultiLine"
-                app:layout_constraintBottom_toBottomOf="@+id/textView33"
-                app:layout_constraintStart_toEndOf="@+id/textView33"
-                app:layout_constraintTop_toTopOf="@+id/textView33"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
-                android:text="select img"
-                app:layout_constraintEnd_toEndOf="@+id/textView34"
-                app:layout_constraintStart_toStartOf="@+id/textView34"
-                app:layout_constraintTop_toBottomOf="@+id/textView34" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/photo_btn"
+                android:layout_width="228dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/rebbtn_shape"
+                android:fontFamily="@font/yeonsungregular"
+                android:text="add photo"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout_description" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView5"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginBottom="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/button"
-                app:layout_constraintHorizontal_bias="0.569"
-                app:layout_constraintStart_toStartOf="@+id/button"
-                app:layout_constraintTop_toBottomOf="@+id/button"
-                app:layout_constraintVertical_bias="0.263">
+                android:layout_width="205dp"
+                android:layout_height="157dp"
+                android:layout_marginTop="25dp"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photo_btn">
 
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@tools:sample/avatars" />
             </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:text="Button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/cardView5"
-                app:layout_constraintStart_toStartOf="@+id/cardView5"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/upload_btn"
+                android:layout_width="228dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/rebbtn_shape"
+                android:fontFamily="@font/yeonsungregular"
+                android:text="upload"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardView5" />
-
-            <RelativeLayout
-                android:layout_width="409dp"
-                android:layout_height="74dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="315dp">
-
-            </RelativeLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
