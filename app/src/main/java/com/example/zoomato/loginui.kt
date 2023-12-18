@@ -27,7 +27,7 @@ class loginui : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     private lateinit var email: String
     private lateinit var password: String
-    private lateinit var googlesingin: GoogleSignInClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginuiBinding.inflate(layoutInflater)
@@ -58,20 +58,10 @@ class loginui : AppCompatActivity() {
         }
 
 
-        // login with google
-        //setting up google sign in
-        val googlesigninoption = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail().build()
-
-        googlesingin = GoogleSignIn.getClient(this, googlesigninoption)
-        binding.btngoogle.setOnClickListener {
-            val signIntent = googlesingin.signInIntent
-            launcher.launch(signIntent)
 
 
         }
-    }
+
 
     private fun loginuser(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -95,26 +85,7 @@ class loginui : AppCompatActivity() {
         finish()
     }
 
-    private val launcher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            if (task.isSuccessful) {
-                val account: GoogleSignInAccount = task.result
-                val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-                auth.signInWithCredential(credential).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val user: FirebaseUser? = auth.currentUser
-                        updateUI(user)
-                    } else {
-                        Toast.makeText(this, "login failed", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
 
-        }
-    }
 
     override fun onStart() {
         super.onStart()
