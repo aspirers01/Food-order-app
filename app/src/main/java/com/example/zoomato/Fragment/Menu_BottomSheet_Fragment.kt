@@ -44,26 +44,18 @@ class Menu_BottomSheet_Fragment : BottomSheetDialogFragment() {
         val price = listOf("15", "34", "34", "45", "20", "15", "34", "34", "45", "20")
         val imgof_food =
             listOf(
-                R.drawable.d1,
-                R.drawable.d1,
-                R.drawable.d2,
-                R.drawable.d1,
-                R.drawable.d2,
-                R.drawable.d1,
-                R.drawable.d1,
-                R.drawable.d2,
-                R.drawable.d1,
-                R.drawable.d2
+                "15", "34", "34", "45", "20", "15", "34", "34", "45", "20"
+
             )
 
-        val adapter = MenuAdapter(
-            ArrayList(food_name),
-            ArrayList(price),
-            ArrayList(imgof_food),
-            requireContext()
-        )
-        binding.recyclerbottomsheet.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerbottomsheet.adapter = adapter
+//        val adapter = MenuAdapter(
+//            ArrayList(food_name),
+//            ArrayList(price),
+//            ArrayList(imgof_food),
+//            requireContext()
+//        )
+//        binding.recyclerbottomsheet.layoutManager = LinearLayoutManager(requireContext())
+//        binding.recyclerbottomsheet.adapter = adapter
 
     }
 

@@ -6,28 +6,28 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.zoomato.DetailsActivity
+import com.example.zoomato.Model.MenuModel
 import com.example.zoomato.databinding.MenuItemsBinding
 
 class MenuAdapter(
-    private val menuitems: MutableList<String>,
-    private val menuprices: MutableList<String>,
-    private val menuimgs: MutableList<Int>,
+    private val menuitems : MutableList<MenuModel> = mutableListOf(),
     private  val requrecontext:Context
 ) : RecyclerView.Adapter<MenuAdapter.MHViewHolder>() {
     inner class MHViewHolder(var binding: MenuItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.apply {
-                menuImg.setImageResource(menuimgs[position])
-                menuPrice.text = "$ "+ menuprices[position]
-                menufoodname.text = menuitems[position]
+                Glide.with(requrecontext).load(menuitems[position].foodimage).into(menuImg)
+                menuPrice.text = "$ "+ menuitems[position].foodprice
+                menufoodname.text = menuitems[position].foodname
 
                 // set onclick listenr  to open  details
                 itemView.setOnClickListener {
                     val intent = Intent(requrecontext, DetailsActivity::class.java)
-                    intent.putExtra("MenuItemName", menuitems.get(position))
-                    intent.putExtra("MenuItemImage", menuimgs.get(position))
+                    intent.putExtra("MenuItemName", menuitems.get(position).foodname)
+                    intent.putExtra("MenuItemImage",menuitems.get(position).foodimage)
                     requrecontext.startActivity(intent)
                 }
 
@@ -51,6 +51,15 @@ class MenuAdapter(
 
         holder.bind(position)
 
+    }
+
+    fun setData(it: List<MenuModel>?): List<MenuModel>? {
+        menuitems.clear()
+        if (it != null) {
+            menuitems.addAll(it)
+        }
+        notifyDataSetChanged()
+        return menuitems
     }
 
 }

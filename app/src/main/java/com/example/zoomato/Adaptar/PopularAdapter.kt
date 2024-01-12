@@ -5,13 +5,13 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.zoomato.DetailsActivity
+import com.example.zoomato.Model.MenuModel
 import com.example.zoomato.databinding.ItemListBinding
 
 class PopularAdapter(
-    private val Item: List<String>,
-    private val Img: List<Int>,
-    private val Price: List<String> ,
+    private val menuitems: MutableList<MenuModel>,
     private  val requrecontext: Context
 ) :
     RecyclerView.Adapter<PopularAdapter.PopularViewHolder>() {
@@ -29,20 +29,20 @@ class PopularAdapter(
     }
 
     override fun getItemCount(): Int {
-        return Item.size
+        return menuitems.size
     }
 
     override fun onBindViewHolder(holder: PopularViewHolder, position: Int) {
-        val item = Item[position]
-        val img = Img[position]
-        val price = "$ "+Price[position]
+        val item = menuitems[position].foodname
+        val price = menuitems[position].foodprice
+        val uri = menuitems[position].foodimage
         holder.binding.foodnamepopular.text = item
         holder.binding.pricePopular.text = price
-        holder.binding.imageView6.setImageResource(img)
+         Glide.with(requrecontext).load(uri).into(holder.binding.imageView6)
         holder.itemView.setOnClickListener {
             val intent = Intent(requrecontext, DetailsActivity::class.java)
-            intent.putExtra("MenuItemName", Item.get(position))
-            intent.putExtra("MenuItemImage", Img.get(position))
+            intent.putExtra("MenuItemName", menuitems.get(position).foodname)
+            intent.putExtra("MenuItemImage", menuitems.get(position).foodimage)
             requrecontext.startActivity(intent)
         }
 
