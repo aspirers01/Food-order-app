@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Zoomato</string>
+    <string name="app_name">food_app</string>
     <string name="title_activity_home_page">Home_Page</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
