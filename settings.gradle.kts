@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Zoomato"
+rootProject.name = "food_app"
 include(":app")

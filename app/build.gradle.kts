@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.zoomato"
+    namespace = "com.example.food_app"
     compileSdk = 33
 
     defaultConfig {
