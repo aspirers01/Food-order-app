@@ -60,6 +60,7 @@ class MenuAdapter(
     }
 
     fun setData(it: List<MenuModel>?): List<MenuModel>? {
+
         menuitems.clear()
         if (it != null) {
             menuitems.addAll(it)
