@@ -12,7 +12,7 @@ import com.example.food_app.databinding.ItemListBinding
 
 class PopularAdapter(
     private val menuitems: MutableList<MenuModel>,
-    private  val requrecontext: Context
+    private val requrecontext: Context
 ) :
     RecyclerView.Adapter<PopularAdapter.PopularViewHolder>() {
     inner class PopularViewHolder(var binding: ItemListBinding) :
@@ -38,16 +38,22 @@ class PopularAdapter(
         val uri = menuitems[position].foodimage
         holder.binding.foodnamepopular.text = item
         holder.binding.pricePopular.text = price
-         Glide.with(requrecontext).load(uri).into(holder.binding.imageView6)
+        Glide.with(requrecontext).load(uri).into(holder.binding.imageView6)
+
         holder.itemView.setOnClickListener {
-            val intent = Intent(requrecontext, DetailsActivity::class.java)
-            intent.putExtra("MenuItemName", menuitems.get(position).foodname)
-            intent.putExtra("MenuItemImage", menuitems.get(position).foodimage)
+            val intent = Intent(requrecontext, DetailsActivity::class.java).apply {
+                putExtra("MenuItemName", menuitems.get(position).foodname)
+                putExtra("MenuItemImage", menuitems.get(position).foodimage)
+                putExtra("MenuItemDescription", menuitems.get(position).fooddescription)
+                putExtra("MenuItemPrice", menuitems.get(position).foodprice)
+                putExtra("MenuItemIngrident", menuitems.get(position).foodingredients)
+
+            }
             requrecontext.startActivity(intent)
+
+
         }
 
 
     }
-
-
 }
