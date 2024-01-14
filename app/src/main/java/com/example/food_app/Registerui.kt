@@ -95,6 +95,7 @@ class Registerui : AppCompatActivity() {
               val credintial= GoogleAuthProvider.getCredential(account?.idToken,null)
                 auth.signInWithCredential(credintial).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        updateuser(account?.displayName.toString(),account?.email.toString(),"")
                         Toast.makeText(this, "Google sign in success", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@Registerui, loginui::class.java)
                         startActivity(intent)
