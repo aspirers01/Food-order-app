@@ -51,7 +51,7 @@ class Home_Fragment : Fragment() {
                       val fooditem=foosnapshot.getValue(MenuModel::class.java)
                       menuItems.add(fooditem!!)
 
-                      displaypopularitem(menuItems)
+                       randomsuffeled(menuItems)
                   }
              }
 
@@ -64,9 +64,17 @@ class Home_Fragment : Fragment() {
     }
 
     private fun displaypopularitem(menuItems: MutableList<MenuModel>) {
+
         val adapter = PopularAdapter(menuItems, requireContext())
         binding.rcHome.layoutManager = LinearLayoutManager(requireContext())
         binding.rcHome.adapter = adapter
+    }
+
+    private fun randomsuffeled(menuItems: MutableList<MenuModel>) {
+       // create a suffeled list of menu items
+         menuItems.shuffle()
+        // display the first 5 items of suffeled list
+        displaypopularitem(menuItems.take(5) as MutableList<MenuModel>)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

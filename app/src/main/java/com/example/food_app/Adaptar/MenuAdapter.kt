@@ -11,23 +11,30 @@ import com.example.food_app.Model.MenuModel
 import com.example.food_app.databinding.MenuItemsBinding
 
 class MenuAdapter(
-    private val menuitems : MutableList<MenuModel> = mutableListOf(),
-    private  val requrecontext:Context
+    private val menuitems: MutableList<MenuModel> = mutableListOf(),
+    private val requrecontext: Context
 ) : RecyclerView.Adapter<MenuAdapter.MHViewHolder>() {
     inner class MHViewHolder(var binding: MenuItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.apply {
                 Glide.with(requrecontext).load(menuitems[position].foodimage).into(menuImg)
-                menuPrice.text = "$ "+ menuitems[position].foodprice
+                menuPrice.text = "$ " + menuitems[position].foodprice
                 menufoodname.text = menuitems[position].foodname
 
                 // set onclick listenr  to open  details
                 itemView.setOnClickListener {
-                    val intent = Intent(requrecontext, DetailsActivity::class.java)
-                    intent.putExtra("MenuItemName", menuitems.get(position).foodname)
-                    intent.putExtra("MenuItemImage",menuitems.get(position).foodimage)
+                    val intent = Intent(requrecontext, DetailsActivity::class.java).apply {
+                        putExtra("MenuItemName", menuitems.get(position).foodname)
+                        putExtra("MenuItemImage", menuitems.get(position).foodimage)
+                        putExtra("MenuItemDescription", menuitems.get(position).fooddescription)
+                        putExtra("MenuItemPrice", menuitems.get(position).foodprice)
+                        putExtra("MenuItemIngrident", menuitems.get(position).foodingredients)
+
+
+                    }
                     requrecontext.startActivity(intent)
+
                 }
 
             }
