@@ -73,11 +73,11 @@ class Cart_Fragment : Fragment() {
                     cartItem?.foodprice.let { foodprice.add(it!!) }
                  cartItem?.foodimage.let { foodimage.add(it!!) }
                  cartItem?.foodcount.let { foodqantity.add(it!!)
-
+                     displaydata(foodname, foodprice, foodimage, foodqantity)
 
                 }}
 
-                displaydata(foodname, foodprice, foodimage, foodqantity)
+
 
             }
 

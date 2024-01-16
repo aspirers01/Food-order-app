@@ -20,8 +20,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="367dp"
+            android:layout_height="91dp">
 
             <ImageView
                 android:id="@+id/menu_img"
@@ -51,14 +51,13 @@
                 android:id="@+id/menu_price"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="44dp"
                 android:fontFamily="@font/latoregular"
                 android:gravity="center"
                 android:text="$ 5"
                 android:textColor="@color/mainred"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.789"
-                app:layout_constraintStart_toEndOf="@+id/menufoodname"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView

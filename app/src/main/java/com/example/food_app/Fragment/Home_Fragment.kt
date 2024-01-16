@@ -90,6 +90,7 @@ class Home_Fragment : Fragment() {
         imageList.add(SlideModel(R.drawable.banner1, scaleType = ScaleTypes.FIT))
         imageList.add(SlideModel(R.drawable.banner2, ScaleTypes.FIT))
         imageList.add(SlideModel(R.drawable.banner3, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.restorent, ScaleTypes.FIT))
 
 
         val imageSlider = binding.imageSlider
