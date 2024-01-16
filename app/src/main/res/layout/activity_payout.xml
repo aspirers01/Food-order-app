@@ -60,7 +60,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editTextText6"
+            android:id="@+id/ednamepy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -138,6 +138,7 @@
 
         <EditText
 
+            android:id="@+id/edphnopy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -178,6 +179,7 @@
 
         <TextView
 
+            android:id="@+id/edamountpy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -220,6 +222,7 @@
 
         <EditText
 
+            android:id="@+id/edaddrespy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"

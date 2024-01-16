@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
     android:orientation="vertical"
     android:padding="6dp"
-    android:backgroundTint="@color/white"
     app:layout_anchorGravity="center"
-    android:background="@color/white"
     tools:context=".Fragment.Profile_Fragment">
 
     <LinearLayout
@@ -50,6 +50,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/edname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -86,16 +87,14 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/edaddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/latoregular"
+                android:hint="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual "
                 android:inputType="textMultiLine"
-                android:padding="8dp"
-                android:text="Lorem ipsum is placeholder text
-commonly used in the graphic,
-print, and publishing industries
-for previewing layouts and visual " />
+                android:padding="8dp" />
 
         </LinearLayout>
 
@@ -125,6 +124,7 @@ for previewing layouts and visual " />
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/edemail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -159,6 +159,7 @@ for previewing layouts and visual " />
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/edphoneno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -186,16 +187,16 @@ for previewing layouts and visual " />
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button3"
+            android:id="@+id/btnsaveinfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/profile_edittext_shape"
-            android:text="Save   Information"
             android:layout_marginBottom="32dp"
+            android:background="@drawable/profile_edittext_shape"
+            android:fontFamily="@font/yeonsungregular"
+            android:text="Save   Information"
             android:textAllCaps="false"
             android:textColor="@color/mainred"
-            android:fontFamily="@font/yeonsungregular"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
     </LinearLayout>
 
 
