@@ -5,27 +5,35 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.food_app.DetailsActivity
+import com.example.food_app.Model.CartItems
+import com.example.food_app.Model.MenuModel
 import com.example.food_app.databinding.BuyAgainItemBinding
 
 class BuyAgainAdapter(
-    private val buyitems: ArrayList<String>,
-    private val buyprices: ArrayList<String>,
-    private val buyimgs: ArrayList<Int>,
+     private val menuitems:MutableList<MenuModel>,
     private val requrecontext: Context
 ) : RecyclerView.Adapter<BuyAgainAdapter.ViewHolder>() {
     inner class ViewHolder(val binding: BuyAgainItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
 
-            binding.buyFoodname.text = buyitems[position]
-            binding.buyprice.text = buyprices[position]
-            binding.buyimg.setImageResource(buyimgs[position])
+            binding.buyFoodname.text =  menuitems[position].foodname
+            binding.buyprice.text = menuitems[position].foodprice
+            Glide.with(requrecontext).load(menuitems[position]).into(binding.buyimg)
+
 
             itemView.setOnClickListener {
-                val intent = Intent(requrecontext, DetailsActivity::class.java)
-                intent.putExtra("MenuItemName", buyitems.get(position))
-                intent.putExtra("MenuItemImage", buyimgs.get(position))
+                val intent = Intent(requrecontext, DetailsActivity::class.java).apply{
+                putExtra("MenuItemName", menuitems.get(position).foodname)
+                putExtra("MenuItemImage", menuitems.get(position).foodimage)
+                putExtra("MenuItemDescription", menuitems.get(position).fooddescription)
+                putExtra("MenuItemPrice", menuitems.get(position).foodprice)
+                putExtra("MenuItemIngrident", menuitems.get(position).foodingredients)
+                putExtra("menuidd", menuitems.get(position).menuid)
+                }
+
                 requrecontext.startActivity(intent)
             }
         }
@@ -39,7 +47,7 @@ class BuyAgainAdapter(
     }
 
     override fun getItemCount(): Int {
-        return buyitems.size
+        return menuitems.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

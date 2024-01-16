@@ -67,6 +67,11 @@ class CartAdapter(
             if (itemquantities[position] > 1) {
                 itemquantities[position]--
                 binding.quantity.text = itemquantities[position].toString()
+                cartref.child(cartItems[position]).child("foodcount")
+                    .setValue(itemquantities[position])
+
+
+
             } else {
                 delete(position)
             }
@@ -77,6 +82,8 @@ class CartAdapter(
             if (itemquantities[position] < 10) {
                 itemquantities[position]++
                 binding.quantity.text = itemquantities[position].toString()
+                cartref.child(cartItems[position]).child("foodcount")
+                    .setValue(itemquantities[position])
             } else {
                 Toast.makeText(cntx, "item quantity is maximum ", Toast.LENGTH_SHORT).show()
             }
@@ -84,53 +91,19 @@ class CartAdapter(
         }
 
         private fun delete(position: Int) {
-            val retriveditem = position
-            getunikeyatpostion(retriveditem) { uniqekey ->
-                if (uniqekey != null) {
-                    cartref.child(uniqekey).removeValue().addOnSuccessListener {
-                        cartItems.removeAt(position)
-                        cartItemPrices.removeAt(position)
-                        cartImages.removeAt(position)
-                        cartqantity.removeAt(position)
-                        notifyItemRemoved(position)
-                        notifyItemRangeChanged(position, cartItems.size)
-                        Toast.makeText(cntx, "item deleted", Toast.LENGTH_SHORT).show()
 
-                        itemquantities =
-                            itemquantities.filterIndexed { index, _ -> index != position }.toIntArray()
-                        notifyItemRemoved(position)
-                        notifyItemRangeChanged(position, cartItems.size)
-                    }.addOnFailureListener {
-                        Toast.makeText(cntx, "failed to delete", Toast.LENGTH_SHORT).show()
-                    }
+            cartref.child(cartItems[position]).removeValue()
+            cartItems.removeAt(position)
+            cartItemPrices.removeAt(position)
+            cartImages.removeAt(position)
+            cartqantity.removeAt(position)
+            notifyDataSetChanged()
 
-
-                }
-
-            }
         }
 
 
-    private fun getunikeyatpostion(retriveditem: Int, oncomplete: (String?) -> Unit) {
-        cartref.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                var uniqekey: String? = null
-                snapshot.children.forEachIndexed() { index, child ->
-                    if (index == retriveditem) {
-                        uniqekey = snapshot.key
-                        return@forEachIndexed
-                    }
-                }
 
 
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(cntx, error.message, Toast.LENGTH_SHORT).show()
-            }
-        })
-
-    }
 
 }
 

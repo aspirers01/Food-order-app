@@ -1,5 +1,6 @@
 package com.example.food_app.Fragment
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -30,6 +31,7 @@ class Cart_Fragment : Fragment() {
     private lateinit var foodprice: MutableList<String>
     private lateinit var foodqantity: MutableList<Int>
     private lateinit var foodimage: MutableList<String>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,9 +72,11 @@ class Cart_Fragment : Fragment() {
                   cartItem?.foodname.let { foodname.add(it!!) }
                     cartItem?.foodprice.let { foodprice.add(it!!) }
                  cartItem?.foodimage.let { foodimage.add(it!!) }
-                 cartItem?.foodcount.let { foodqantity.add(it!!) }
+                 cartItem?.foodcount.let { foodqantity.add(it!!)
 
-                }
+
+                }}
+
                 displaydata(foodname, foodprice, foodimage, foodqantity)
 
             }
@@ -84,6 +88,7 @@ class Cart_Fragment : Fragment() {
 
 
     }
+
 
     private fun displaydata(fooname: MutableList<String>, fooprice: MutableList<String>, fooimage: MutableList<String>, fooqantity: MutableList<Int>) {
         val adapter = CartAdapter(
@@ -98,6 +103,7 @@ class Cart_Fragment : Fragment() {
         binding.cartRecyclerView.adapter = adapter
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.proceedbtn.setOnClickListener {
