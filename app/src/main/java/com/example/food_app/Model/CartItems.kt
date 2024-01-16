@@ -5,5 +5,6 @@ package com.example.food_app.Model
      var foodimage: String?=null,
         var foodprice: String?=null,
     var foodcount: Int?=null,
-     var foodid:String?=null
+     var foodid:String?=null,
+
  )

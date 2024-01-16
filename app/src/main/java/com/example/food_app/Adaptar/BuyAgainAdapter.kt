@@ -21,7 +21,7 @@ class BuyAgainAdapter(
 
             binding.buyFoodname.text =  menuitems[position].foodname
             binding.buyprice.text = menuitems[position].foodprice
-            Glide.with(requrecontext).load(menuitems[position]).into(binding.buyimg)
+           Glide.with(requrecontext).load(menuitems[position].foodimage).into(binding.buyimg)
 
 
             itemView.setOnClickListener {

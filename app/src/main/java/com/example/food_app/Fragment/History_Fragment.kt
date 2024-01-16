@@ -24,10 +24,10 @@ import com.google.firebase.database.ValueEventListener
 class History_Fragment : Fragment() {
     private lateinit var binding: FragmentHistoryBinding
     private lateinit var BuyAgainAdapter: BuyAgainAdapter
-     private lateinit var cartItems: MutableList<CartItems>
-     private lateinit var database:FirebaseDatabase
-     private lateinit var auth:FirebaseAuth
-      private lateinit var menuitmes:MutableList<MenuModel>
+    private lateinit var database: FirebaseDatabase
+    private lateinit var auth: FirebaseAuth
+    private lateinit var menuitmes: MutableList<MenuModel>
+    private lateinit var cartitems: MutableList<CartItems>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,37 +40,27 @@ class History_Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-          reterive()
+        reterive()
 
 
     }
 
     private fun reterive() {
-       // database and auth
+
+        auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
-        auth= FirebaseAuth.getInstance()
-        val foodref: DatabaseReference =database.reference.child("history").child(auth.currentUser!!.uid)
-        cartItems= mutableListOf()
-        foodref.addListenerForSingleValueEvent(object : ValueEventListener {
+        val cartref: DatabaseReference = database.reference.child("history").child(auth.currentUser?.uid!!)
+        cartitems = mutableListOf()
+
+        cartref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                for (foosnapshot in snapshot.children){
-                    val fooditem=foosnapshot.getValue(CartItems::class.java)
-                    cartItems.add(fooditem!!)
+                for (cartsnapshot in snapshot.children) {
+                    val cartitem = cartsnapshot.getValue(CartItems::class.java)
+                    cartitems.add(cartitem!!)
 
-
+//
                 }
-                menuitmes= mutableListOf()
-                for(i in cartItems) {
-                    val fodid = i.foodid
-                    database.getReference("menu").child(fodid!!).get().addOnSuccessListener {
-                        if (it.exists()) {
-                            val model=it.getValue(MenuModel::class.java)
-                            menuitmes.add(model!!)
-                        }
-                    }
-                }
-                Log.d("mebu",menuitmes.toString())
-
+                retriveitem(cartitems)
 
             }
 
@@ -79,20 +69,36 @@ class History_Fragment : Fragment() {
             }
         })
 
+    }
+
+    private fun retriveitem(cartitems: MutableList<CartItems>) {
+//          Log.d("cart",cartitems.toString())
+        menuitmes = mutableListOf()
+        for (i in cartitems) {
+               val fdid=i.foodid
+            val foodref: DatabaseReference = database.reference.child("menu").child(fdid!!)
+              foodref.get().addOnSuccessListener {
+                  if (it.exists()){
+                      val fooditem=it.getValue(MenuModel::class.java)
+                      menuitmes.add(fooditem!!)
+                      setuprecyclerview(menuitmes)
+                  }
+              }.addOnFailureListener {
+                  Toast.makeText(requireContext(), "Error unable to fetcech data from server", Toast.LENGTH_SHORT).show()
+              }
+
+
+        }
+
+
 
     }
 
-
-
-
-
-    fun setuprecyclerView(m: MutableList<MenuModel>) {
-
-        Log.d("men",menuitmes.toString())
-        BuyAgainAdapter = BuyAgainAdapter(menuitmes,requireContext())
-        binding.rcbuyagain.layoutManager = LinearLayoutManager(requireContext())
+    private fun setuprecyclerview(menuitmes: MutableList<MenuModel>) {
+        BuyAgainAdapter = BuyAgainAdapter( menuitmes,requireContext())
         binding.rcbuyagain.adapter = BuyAgainAdapter
+        binding.rcbuyagain.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
     }
-
-
 }
+

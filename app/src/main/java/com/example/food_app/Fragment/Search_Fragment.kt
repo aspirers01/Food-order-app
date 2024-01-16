@@ -109,6 +109,7 @@ class Search_Fragment : Fragment() {
                     menuItems.add(fooditem!!)
 
                 }
+                Log.d("getval",menuItems.toString())
                  alterdata.value=menuItems
             }
 
