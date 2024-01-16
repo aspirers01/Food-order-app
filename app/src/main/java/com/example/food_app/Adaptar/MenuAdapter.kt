@@ -30,6 +30,7 @@ class MenuAdapter(
                         putExtra("MenuItemDescription", menuitems.get(position).fooddescription)
                         putExtra("MenuItemPrice", menuitems.get(position).foodprice)
                         putExtra("MenuItemIngrident", menuitems.get(position).foodingredients)
+                        putExtra("menuidd", menuitems.get(position).menuid)
 
 
                     }

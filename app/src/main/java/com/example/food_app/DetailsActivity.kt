@@ -45,7 +45,9 @@ class DetailsActivity : AppCompatActivity() {
             intent.getStringExtra("MenuItemName"),
             intent.getStringExtra("MenuItemImage"),
             intent.getStringExtra("MenuItemPrice"),
-            1
+            1,
+            intent.getStringExtra("menuidd")
+
         )
         // add item to cart
         // if item is not in cart then add it to cart

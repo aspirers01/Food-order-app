@@ -34,7 +34,7 @@ class PopularAdapter(
 
     override fun onBindViewHolder(holder: PopularViewHolder, position: Int) {
         val item = menuitems[position].foodname
-        val price = menuitems[position].foodprice
+        val price = "$ " + menuitems[position].foodprice
         val uri = menuitems[position].foodimage
         holder.binding.foodnamepopular.text = item
         holder.binding.pricePopular.text = price
@@ -47,6 +47,7 @@ class PopularAdapter(
                 putExtra("MenuItemDescription", menuitems.get(position).fooddescription)
                 putExtra("MenuItemPrice", menuitems.get(position).foodprice)
                 putExtra("MenuItemIngrident", menuitems.get(position).foodingredients)
+                putExtra("menuidd", menuitems.get(position).menuid)
 
             }
             requrecontext.startActivity(intent)

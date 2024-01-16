@@ -87,10 +87,11 @@ class Home_Fragment : Fragment() {
 
 // imageList.add(SlideModel("String Url" or R.drawable)
 // imageList.add(SlideModel("String Url" or R.drawable, "title") You can add title
-        imageList.add(SlideModel(R.drawable.d1))
-        imageList.add(SlideModel("https://bit.ly/2YoJ77H", ScaleTypes.FIT))
-        imageList.add(SlideModel("https://bit.ly/2BteuF2", ScaleTypes.FIT))
-        imageList.add(SlideModel("https://bit.ly/3fLJf72", ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.banner1, scaleType = ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.banner2, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.banner3, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.restorent, ScaleTypes.FIT))
+
 
         val imageSlider = binding.imageSlider
         imageSlider.setImageList(imageList)

@@ -84,7 +84,7 @@ class addFooditem : AppCompatActivity() {
                 if (it.isSuccessful) {
                     storage.downloadUrl.addOnSuccessListener {
                         val newitem =
-                            MenuModel(foodname, foodprice, it.toString(), fooddesc, fooding)
+                            MenuModel(foodname, foodprice, it.toString(), fooddesc, fooding,id)
                         ref.child(id!!).setValue(newitem)
                     }
                     Toast.makeText(this, "Food item added successfully", Toast.LENGTH_SHORT).show()
