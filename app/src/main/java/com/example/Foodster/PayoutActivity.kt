@@ -68,7 +68,7 @@ class PayoutActivity : AppCompatActivity() {
         // reterive data from data base for cart items
         reterive()
         ans.observe(this, {
-            binding.edamountpy.text = "$ " + it.toString()
+            binding.edamountpy.text = "₹ " + it.toString()
         })
         Log.d("cartcheck", "onCreate: ${caritems} ")
 
