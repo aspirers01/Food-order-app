@@ -14,9 +14,18 @@ Welcome to Foodster, your one-stop solution for convenient and delightful food o
 - **Interactive UI:** Enjoy a visually appealing and user-friendly interface built with Android XML.
 
 ## Screenshots
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/accfc0f2-32eb-452a-99eb-df4f2cfaa639" width=250>
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/61eeeaa0-cefa-4390-a080-70e436c76d8d" width=250>
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/2eeef598-e460-4efd-97ec-dc7915ac0882" width =250>
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/c33788e6-5b8c-4406-b263-4e4c996b208c" width=250>
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/b862fc29-a7d0-45ee-a9db-41d3a689c1c1" width=250>
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/d9fb9e0e-d1fa-491b-b6f7-f6da506670d6" width=250>
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/5ca4ac9e-3d2b-44f7-983f-edef1589154f" width=250>
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/dd68728a-6524-472d-b792-e1d39614f6f1" width=250>
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/e9d0da23-fd59-4492-93be-4d23ee7479bb" width=250>
+<img src="https://github.com/aspirers01/Foodster/assets/92663550/e1b4253b-1fba-4aa7-9b7b-290d557c7d78" width=250>
 
-![Foodster Screenshot 1](/screenshots/screenshot1.png)
-![Foodster Screenshot 2](/screenshots/screenshot2.png)
+
 
 ## Tech Stack
 
