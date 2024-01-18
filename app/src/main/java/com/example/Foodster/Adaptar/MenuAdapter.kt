@@ -19,7 +19,7 @@ class MenuAdapter(
         fun bind(position: Int) {
             binding.apply {
                 Glide.with(requrecontext).load(menuitems[position].foodimage).into(menuImg)
-                menuPrice.text = "$ " + menuitems[position].foodprice
+                menuPrice.text = "₹ " + menuitems[position].foodprice
                 menufoodname.text = menuitems[position].foodname
 
                 // set onclick listenr  to open  details

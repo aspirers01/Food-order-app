@@ -19,7 +19,7 @@ class Location_Ui : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLocationUiBinding.inflate(layoutInflater)
 
-        val location_list = arrayOf("jaipur", "odisa", "gorakpur", "gonda", "sdfa", "mmmut")
+        val location_list = arrayOf("jaipur", "odisa", "gorakpur", "gonda", "mmmut")
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, location_list)
 
 

@@ -19,7 +19,7 @@ class BuyAgainAdapter(
         fun bind(position: Int) {
 
             binding.buyFoodname.text =  menuitems[position].foodname
-            binding.buyprice.text = menuitems[position].foodprice
+            binding.buyprice.text = "₹ " +menuitems[position].foodprice
            Glide.with(requrecontext).load(menuitems[position].foodimage).into(binding.buyimg)
 
 

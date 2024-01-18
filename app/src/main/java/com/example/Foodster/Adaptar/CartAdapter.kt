@@ -41,7 +41,7 @@ class CartAdapter(
     inner class ViewHolder(var binding: CartItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.cartFoodName.text = cartItems[position]
-            binding.cartFoodprice.text = "$ " + cartItemPrices[position]
+            binding.cartFoodprice.text = "₹ " + cartItemPrices[position]
             Glide.with(cntx).load(cartImages[position]).into(binding.cartImage)
             binding.quantity.text = itemquantities[position].toString()
             binding.increaseQuantity.setOnClickListener {
