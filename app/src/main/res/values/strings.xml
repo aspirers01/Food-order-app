@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">food_app</string>
+    <string name="app_name">Foodster</string>
     <string name="title_activity_home_page">Home_Page</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="default_web_client_id">837242091931-d5ttujtkvuelrdirctfst76el66fmdbu.apps.googleusercontent.com</string>
+    <string name="default_web_client_id">886081024746-qtskq87dcs4eqrtcqm15o22cboqb274d.apps.googleusercontent.com</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

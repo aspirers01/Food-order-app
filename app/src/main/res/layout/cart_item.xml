@@ -37,14 +37,16 @@
 
             <TextView
                 android:id="@+id/cart_foodName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="141dp"
+                android:layout_height="28dp"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/yeonsungregular"
+                android:inputType="textMultiLine"
                 android:text="TextView"
                 android:textSize="24sp"
 
                 app:layout_constraintBottom_toTopOf="@+id/cart_foodprice"
+                app:layout_constraintEnd_toStartOf="@+id/decrease_quantity"
                 app:layout_constraintStart_toEndOf="@+id/cart_image"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.52" />
@@ -96,7 +98,8 @@
                 android:text="1"
                 app:layout_constraintBottom_toBottomOf="@+id/increase_quantity"
                 app:layout_constraintEnd_toStartOf="@+id/increase_quantity"
-                app:layout_constraintTop_toTopOf="@+id/increase_quantity" />
+                app:layout_constraintTop_toTopOf="@+id/increase_quantity"
+                app:layout_constraintVertical_bias="0.0" />
 
             <ImageButton
                 android:id="@+id/delete_quantity"
