@@ -37,11 +37,12 @@
 
             <TextView
                 android:id="@+id/cart_foodName"
-                android:layout_width="141dp"
-                android:layout_height="28dp"
+                android:layout_width="143dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/yeonsungregular"
                 android:inputType="textMultiLine"
+                android:paddingStart="8dp"
                 android:text="TextView"
                 android:textSize="24sp"
 
