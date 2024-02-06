@@ -13,6 +13,10 @@ Welcome to Foodster, your one-stop solution for convenient and delightful food o
 
 - **Interactive UI:** Enjoy a visually appealing and user-friendly interface built with Android XML.
 
+## Video 
+https://github.com/aspirers01/Foodster/assets/92663550/b5a1fce8-4321-4823-8c00-e3aa10201f8a
+
+
 ## Screenshots
 <img src="https://github.com/aspirers01/Foodster/assets/92663550/accfc0f2-32eb-452a-99eb-df4f2cfaa639" width=250>
 <img src="https://github.com/aspirers01/Foodster/assets/92663550/61eeeaa0-cefa-4390-a080-70e436c76d8d" width=250>
